@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Navigation Test Page</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px;
+            border: 2px solid #4ECDC4;
+            background: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #4ECDC488;
+        }
+        .long-content {
+            height: 1000px;
+            background: linear-gradient(#fff, #4ECDC422);
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .link-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .search-box {
+            width: 100%;
+            padding: 10px;
+            margin: 20px 0;
+            border: 2px solid #4ECDC4;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Navigation Test Page</h1>
+    <p>Press <code>Shift + Space</code> to start navigation mode!</p>
+
+    <h2>Test Controls</h2>
+    <ul>
+        <li><code>j/k</code> - Navigate between elements</li>
+        <li><code>/</code> - Fuzzy search</li>
+        <li><code>r</code> - Record sequence</li>
+        <li><code>p</code> - Play sequence</li>
+        <li><code>d/u</code> - Page down/up</li>
+        <li><code>g/G</code> - Top/bottom</li>
+    </ul>
+
+    <h2>Button Grid (Test Tab Navigation)</h2>
+    <div class="button-grid">
+        <button onclick="alert('Clicked!')">Button 1</button>
+        <button onclick="alert('Clicked!')" title="Button with title">Button 2</button>
+        <button onclick="alert('Clicked!')" aria-label="Button with aria">Button 3</button>
+        <button onclick="alert('Clicked!')">Long Button Name That Wraps</button>
+        <button onclick="alert('Clicked!')">Another Button</button>
+        <button onclick="alert('Clicked!')">Click Me!</button>
+    </div>
+
+    <h2>Links (Test Search)</h2>
+    <div class="link-list">
+        <a href="#" title="Documentation link">View Documentation</a>
+        <a href="#" aria-label="Settings page">Open Settings</a>
+        <a href="#">Help & Support</a>
+        <a href="#">Contact Us</a>
+    </div>
+
+    <h2>Form Elements</h2>
+    <input type="text" class="search-box" placeholder="Type something..." aria-label="Search input">
+    <div class="button-grid">
+        <input type="button" value="Input Button">
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </div>
+
+    <h2>Long Content (Test Scrolling)</h2>
+    <div class="long-content">
+        <p>Scroll down...</p>
+        <div class="button-grid" style="margin-top: 400px">
+            <button onclick="alert('Found the hidden button!')">Hidden Button</button>
+            <a href="#">Hidden Link</a>
+            <button onclick="alert('Another hidden button!')">Another Hidden Button</button>
+        </div>
+        <p style="margin-top: 400px">You made it to the bottom!</p>
+    </div>
+
+    <!-- Core utilities first -->
+    <script src="lib/rect.js"></script>
+    <script src="lib/cursor.js"></script>
+    <!-- Element handling -->
+    <script src="lib/navigator.js"></script>
+    <script src="lib/highlight-better.js"></script>
+    <!-- Features -->
+    <script src="lib/search.js"></script>
+    <script src="lib/recorder.js"></script>
+    <script src="lib/keycast.js"></script>
+    <!-- Initialize keyboard control last -->
+    <script src="lib/keyboard.js"></script>
+    <script>
+        // Initialize keyboard navigation but don't highlight yet
+        window.addEventListener('load', () => {
+            const keyboard = new KeyboardController();
+            keyboard.disable(); // Make sure it starts disabled
+        });
+    </script>
+</body>
+</html>
