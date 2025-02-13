@@ -1,1 +1,19 @@
-{"name": "vimium-plus","version": "1.0.0","description": "Enhanced Vimium navigation for modern browsers","scripts": {"test": "jest"},"devDependencies": {"jest": "^29.7.0","jest-environment-jsdom": "^29.7.0"},"jest": {"testEnvironment": "jsdom","moduleDirectories": ["node_modules","lib"]}}
+{
+  "name": "vimium-plus",
+  "version": "1.0.0",
+  "description": "Enhanced Vimium navigation for modern browsers",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "moduleDirectories": [
+      "node_modules",
+      "lib"
+    ]
+  }
+}

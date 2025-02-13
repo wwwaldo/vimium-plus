@@ -136,6 +136,40 @@ describe('KeyboardController', () => {
         behavior: 'smooth'
       });
     });
+
+    test('d/u keys scroll half page down/up', () => {
+      keyboard.enabled = true;
+      const halfHeight = window.innerHeight * 0.5;
+      
+      // Test 'd' key for half page down
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'd' }));
+      expect(window.scrollBy).toHaveBeenCalledWith({
+        top: halfHeight,
+        behavior: 'smooth'
+      });
+      
+      // Test 'u' key for half page up
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'u' }));
+      expect(window.scrollBy).toHaveBeenCalledWith({
+        top: -halfHeight,
+        behavior: 'smooth'
+      });
+    });
+
+    test('d/u keys do nothing when modifier keys are pressed', () => {
+      keyboard.enabled = true;
+      
+      // Test with various modifier combinations
+      ['shiftKey', 'altKey', 'ctrlKey', 'metaKey'].forEach(modifier => {
+        const eventProps = { key: 'd', [modifier]: true };
+        document.dispatchEvent(new KeyboardEvent('keydown', eventProps));
+        expect(window.scrollBy).not.toHaveBeenCalled();
+        
+        const eventPropsU = { key: 'u', [modifier]: true };
+        document.dispatchEvent(new KeyboardEvent('keydown', eventPropsU));
+        expect(window.scrollBy).not.toHaveBeenCalled();
+      });
+    });
   });
 
   describe('Highlight Mode', () => {
