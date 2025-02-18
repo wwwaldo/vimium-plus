@@ -63,20 +63,23 @@
 
     <h2>Button Grid (Test Tab Navigation)</h2>
     <div class="button-grid">
-        <button onclick="alert('Clicked!')">Button 1</button>
-        <button onclick="alert('Clicked!')" title="Button with title">Button 2</button>
-        <button onclick="alert('Clicked!')" aria-label="Button with aria">Button 3</button>
-        <button onclick="alert('Clicked!')">Long Button Name That Wraps</button>
-        <button onclick="alert('Clicked!')">Another Button</button>
-        <button onclick="alert('Clicked!')">Click Me!</button>
+        <div id="button-output"></div>
+        <button id="button1" onclick="document.getElementById('button-output').textContent = 'Button 1 clicked!'">Button 1</button>
+        <button onclick="document.getElementById('button-output').textContent = 'Button 2 clicked!'">Button 2</button>
+        <button onclick="document.getElementById('button-output').textContent = 'Button 3 clicked!'">Button 3</button>
+        <button onclick="document.getElementById('button-output').textContent = 'Long Button Name That Wraps clicked!'">Long Button Name That Wraps</button>
+        <button onclick="document.getElementById('button-output').textContent = 'Another Button clicked!'">Another Button</button>
+        <button onclick="document.getElementById('button-output').textContent = 'Click Me! clicked!'">Click Me!</button>
     </div>
 
     <h2>Links (Test Search)</h2>
     <div class="link-list">
-        <a href="#" title="Documentation link">View Documentation</a>
-        <a href="#" aria-label="Settings page">Open Settings</a>
-        <a href="#">Help & Support</a>
-        <a href="#">Contact Us</a>
+        <a href="docs.html" id="docs-link" title="Documentation link">View Documentation</a>
+        <a href="docs.html" id="help-link" title="Help link">Need Help?</a>
+        <a href="docs.html" id="guide-link" title="Guide link">User Guide</a>
+        <a href="docs.html" aria-label="Settings page">Open Settings</a>
+        <a href="docs.html">Help & Support</a>
+        <a href="docs.html">Contact Us</a>
     </div>
 
     <h2>Form Elements</h2>
@@ -91,9 +94,9 @@
     <div class="long-content">
         <p>Scroll down...</p>
         <div class="button-grid" style="margin-top: 400px">
-            <button onclick="alert('Found the hidden button!')">Hidden Button</button>
-            <a href="#">Hidden Link</a>
-            <button onclick="alert('Another hidden button!')">Another Hidden Button</button>
+            <button onclick="document.getElementById('button-output').textContent = 'Hidden Button clicked!'">Hidden Button</button>
+            <a href="docs.html">Hidden Link</a>
+            <button onclick="document.getElementById('button-output').textContent = 'Another hidden button clicked!'">Another Hidden Button</button>
         </div>
         <p style="margin-top: 400px">Keep scrolling...</p>
     </div>
@@ -103,9 +106,9 @@
         <h3>Subsection 1.1</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         <div class="button-grid">
-            <button>Section 1 Button 1</button>
-            <button>Section 1 Button 2</button>
-            <button>Section 1 Button 3</button>
+            <button onclick="document.getElementById('button-output').textContent = 'Section 1 Button 1 clicked!'">Section 1 Button 1</button>
+            <button onclick="document.getElementById('button-output').textContent = 'Section 1 Button 2 clicked!'">Section 1 Button 2</button>
+            <button onclick="document.getElementById('button-output').textContent = 'Section 1 Button 3 clicked!'">Section 1 Button 3</button>
         </div>
         <h3>Subsection 1.2</h3>
         <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -116,9 +119,9 @@
         <h3>Subsection 2.1</h3>
         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
         <div class="button-grid">
-            <button>Section 2 Button 1</button>
-            <button>Section 2 Button 2</button>
-            <button>Section 2 Button 3</button>
+            <button onclick="document.getElementById('button-output').textContent = 'Section 2 Button 1 clicked!'">Section 2 Button 1</button>
+            <button onclick="document.getElementById('button-output').textContent = 'Section 2 Button 2 clicked!'">Section 2 Button 2</button>
+            <button onclick="document.getElementById('button-output').textContent = 'Section 2 Button 3 clicked!'">Section 2 Button 3</button>
         </div>
         <h3>Subsection 2.2</h3>
         <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
@@ -129,9 +132,9 @@
         <h3>Subsection 3.1</h3>
         <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
         <div class="button-grid">
-            <button>Section 3 Button 1</button>
-            <button>Section 3 Button 2</button>
-            <button>Section 3 Button 3</button>
+            <button onclick="document.getElementById('button-output').textContent = 'Section 3 Button 1 clicked!'">Section 3 Button 1</button>
+            <button onclick="document.getElementById('button-output').textContent = 'Section 3 Button 2 clicked!'">Section 3 Button 2</button>
+            <button onclick="document.getElementById('button-output').textContent = 'Section 3 Button 3 clicked!'">Section 3 Button 3</button>
         </div>
         <h3>Subsection 3.2</h3>
         <p>Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
@@ -141,9 +144,9 @@
     <div class="long-content">
         <p>Almost at the bottom...</p>
         <div class="button-grid" style="margin-top: 400px">
-            <button onclick="alert('Found another hidden button!')">Final Hidden Button</button>
-            <a href="#">Final Hidden Link</a>
-            <button onclick="alert('Last hidden button!')">Last Hidden Button</button>
+            <button onclick="document.getElementById('button-output').textContent = 'Final Hidden Button clicked!'">Final Hidden Button</button>
+            <a href="docs.html">Final Hidden Link</a>
+            <button onclick="document.getElementById('button-output').textContent = 'Last hidden button clicked!'">Last Hidden Button</button>
         </div>
         <p style="margin-top: 400px">You've reached the bottom!</p>
     </div>
